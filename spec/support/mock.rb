@@ -2,9 +2,17 @@ class MockRequest
   include HttpAcceptLanguage
   
   attr_accessor :env
+
+  def env
+    @env ||= {}
+  end
+
+  def accept_language
+    env['HTTP_ACCEPT_LANGUAGE'] || ''
+  end
   
-  def initialize
-    @env = {'HTTP_ACCEPT_LANGUAGE' => ''}
+  def preferred_language_from(*opts)
+    HttpAcceptLanguage::Parser.new(accept_language).preferred_language_from(*opts)
   end
 end
 
@@ -15,14 +23,13 @@ class MockController
   
   def initialize(request)
     @request = request
-    @cookies = ActionDispatch::Cookies::CookieJar.new
+    @cookies = ActionDispatch::Cookies::CookieJar.new(nil)
     @default_url_options = @params = {}
   end
   
   def user_locale
     return user.locale if user
   end
-  
 end
 
 class MockUser
