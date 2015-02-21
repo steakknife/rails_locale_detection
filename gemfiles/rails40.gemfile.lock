@@ -7,7 +7,7 @@ GIT
       pry
 
 PATH
-  remote: .
+  remote: ../
   specs:
     rails_locale_detection (2.0.2)
       activesupport (>= 3.2, < 5)
@@ -132,7 +132,7 @@ GEM
       rspec-expectations (~> 3.2.0)
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
-    rspec-support (3.2.1)
+    rspec-support (3.2.0)
     slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -158,7 +158,7 @@ DEPENDENCIES
   i18n
   pry-rails
   pry-rescue!
-  rails (>= 3.2, < 5)
+  rails (~> 4.0)
   rails_locale_detection!
   rake
   rspec (~> 3)
