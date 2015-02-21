@@ -1,17 +1,13 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'action_view'
+require 'abstract_controller'
+require 'action_controller'
+require 'active_support'
 
-require 'rspec'
-require 'i18n'
-require 'action_dispatch/middleware/cookies'
-require 'timecop'
+require 'rspec/rails'
 
 require 'rails_locale_detection'
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+Dir[File.join(File.dirname(__FILE__), 'support', '**', '*.rb')].each { |f| require f }
 
-RSpec.configure do |config|
-  
-end
+I18n.default_locale = :en
+I18n.available_locales = [:en, :fr]
