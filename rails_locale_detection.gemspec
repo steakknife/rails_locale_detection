@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activesupport', *rails_version
   s.add_runtime_dependency 'http_accept_language', '>= 0'
 
-  s.add_development_dependency 'appraisal', '~> 0'
+  s.add_development_dependency 'appraisal', '~> 1'
   s.add_development_dependency 'bundler', '~> 1'
   s.add_development_dependency 'i18n', '>= 0'
   s.add_development_dependency 'pry-rails', '>= 0'
